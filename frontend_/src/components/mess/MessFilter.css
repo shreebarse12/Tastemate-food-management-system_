@@ -1,0 +1,145 @@
+.mess-filter {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 8px;
+  margin-bottom: 16px;
+}
+
+.search-bar input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  margin-left: 8px;
+}
+
+.search-icon {
+  color: #9ca3af;
+  margin-right: 8px;
+}
+
+.filter-toggle {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+  margin-bottom: 16px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.filter-toggle:hover {
+  color: var(--primary-color);
+}
+
+.filter-icon {
+  margin-right: 8px;
+}
+
+.chevron-icon {
+  margin-left: 4px;
+  transition: transform 0.2s ease;
+}
+
+.chevron-icon.rotated {
+  transform: rotate(180deg);
+}
+
+.filters-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.filter-group h4 {
+  font-weight: 500;
+  font-size: 14px;
+  margin-bottom: 8px;
+  color: #374151;
+}
+
+.cuisine-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cuisine-button {
+  padding: 4px 12px;
+  font-size: 12px;
+  border-radius: 9999px;
+  border: 1px solid #d1d5db;
+  background-color: white;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.cuisine-button:hover {
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.cuisine-button.active {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.rating-filter {
+  display: flex;
+  align-items: center;
+}
+
+.rating-slider {
+  width: 100%;
+  margin-right: 8px;
+}
+
+.rating-value {
+  font-size: 14px;
+  font-weight: 500;
+  color: #374151;
+}
+
+.select-filter {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: white;
+}
+
+.select-filter:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+  .mess-filter {
+    padding: 12px;
+  }
+  
+  .cuisine-filters {
+    gap: 6px;
+  }
+  
+  .cuisine-button {
+    padding: 3px 10px;
+    font-size: 11px;
+  }
+}

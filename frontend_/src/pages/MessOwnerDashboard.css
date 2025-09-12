@@ -1,0 +1,478 @@
+/* Basic Reset and Root Styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+.mess-dashboard {
+    min-height: 100vh;
+    background: linear-gradient(to bottom, #ffffff, #fff1f2);
+    /* No padding here, as the new .main-content handles it */
+}
+
+.container {
+    max-width: 72rem;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5rem 1rem;
+    /* New padding for the main container */
+}
+
+/* Header */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #ffffff;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-right: -23rem;
+    margin-left: -24rem;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-left: 18rem;
+}
+
+.icon-main {
+    width: 2rem;
+    height: 2rem;
+}
+
+.title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #e11d48;
+    margin: 0;
+}
+
+.subtitle {
+    font-size: 0.875rem;
+    color: #4b5563;
+    margin: 0;
+}
+
+.header-profile {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    border: 1px solid #fecaca;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    padding: 0.5rem 0.75rem;
+    margin-right: 15rem;
+}
+
+.icon-user {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: #e11d48;
+}
+
+.profile-name {
+    font-weight: 600;
+    color: #e11d48;
+}
+
+.profile-info {
+    font-size: 0.75rem;
+    color: #4b5563;
+}
+
+/* Meal Tabs */
+.meal-tabs {
+    margin-top: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    margin-right: -8rem;
+    margin-left: -5rem;
+
+}
+
+.tab-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 1rem;
+    border: 1px solid #fecaca;
+    padding: 0.75rem 1rem;
+    transition: all 0.2s ease-in-out;
+    background-color: #ffffff;
+    color: #e11d48;
+}
+
+.tab-button:hover {
+    border-color: #fb7185;
+}
+
+.tab-button-active {
+    border-color: #e11d48;
+    background-color: #e11d48;
+    color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tab-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.tab-label {
+    font-weight: 600;
+}
+
+/* Toolbar */
+.toolbar {
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 0.75rem;
+    margin-left: -4rem;
+    margin-right: -7rem;
+}
+
+@media (min-width: 640px) {
+    .toolbar {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    border-radius: 1rem;
+    border: 1px solid #fecaca;
+    background-color: #ffffff;
+    padding: 0.5rem 0.75rem;
+}
+
+@media (min-width: 640px) {
+    .search-container {
+        width: 20rem;
+    }
+}
+
+.search-icon {
+    width: 1rem;
+    height: 1rem;
+}
+
+.search-input {
+    width: 100%;
+    outline: none;
+    border: none;
+}
+
+.add-dish-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 1rem;
+    background-color: #e11d48;
+    color: #ffffff;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: none;
+    cursor: pointer;
+}
+
+.add-dish-icon {
+    width: 1rem;
+    height: 1rem;
+}
+
+/* New: Main content grid for side-by-side layout */
+.main-content {
+    display: grid;
+    grid-template-columns: minmax(300px, 1fr) 2fr;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+@media (max-width: 1023px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Form */
+.form-card {
+    border-radius: 1rem;
+    border: 1px solid #fecaca;
+    background-color: #ffffff;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    margin-bottom: 2.1rem;
+    margin-right: -8rem;
+    margin-left: -4rem;
+    /* margin-right: -7rem; */
+}
+
+@media (min-width: 768px) {
+    .form-card {
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .form-field-name {
+        grid-column: span 2;
+    }
+
+    .form-field-price,
+    .form-field-type,
+    .form-field-available {
+        grid-column: span 1;
+    }
+
+    .form-field-description,
+    .form-field-image {
+        grid-column: span 6;
+    }
+
+    .form-actions {
+        grid-column: span 6;
+    }
+}
+
+.form-label {
+    font-size: 0.875rem;
+    color: #4b5563;
+    display: block;
+}
+
+.form-input,
+.form-select,
+.form-textarea {
+    margin-top: 0.25rem;
+    width: 100%;
+    border-radius: 0.75rem;
+    border: 1px solid #d1d5db;
+    padding: 0.5rem 0.75rem;
+}
+
+.form-file-input {
+    margin-top: 0.25rem;
+    width: 100%;
+}
+
+.form-image-preview {
+    margin-top: 0.5rem;
+    width: 8rem;
+    height: 8rem;
+    object-fit: cover;
+    border-radius: 0.75rem;
+    border: 1px solid #d1d5db;
+}
+
+.form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.5rem;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #d1d5db;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: #e11d48;
+    color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+
+.btn-secondary {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #d1d5db;
+}
+
+.btn-icon {
+    width: 1rem;
+    height: 1rem;
+}
+
+/* Dish List */
+.dish-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-left: -4rem;
+    margin-right: -7rem;
+}
+
+@media (min-width: 640px) {
+    .dish-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .dish-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.dish-card {
+    border-radius: 1rem;
+    border: 1px solid #fecaca;
+    background-color: #ffffff;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    opacity: 1;
+}
+
+.dish-unavailable {
+    border-color: #e5e7eb;
+    background-color: #f9fafb;
+    opacity: 0.9;
+}
+
+.dish-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.75rem;
+}
+
+.dish-title-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dish-type-dot {
+    display: inline-block;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-radius: 9999px;
+}
+
+.dish-type-veg {
+    background-color: #16a34a;
+}
+
+.dish-type-nonveg {
+    background-color: #dc2626;
+}
+
+.dish-name {
+    font-weight: 600;
+    color: #1e293b;
+    margin: 0;
+}
+
+.dish-description {
+    font-size: 0.875rem;
+    color: #4b5563;
+    margin-top: 0.25rem;
+}
+
+.dish-price-info {
+    text-align: right;
+}
+
+.dish-price {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    color: #e11d48;
+    font-weight: 600;
+}
+
+.price-icon {
+    width: 1rem;
+    height: 1rem;
+}
+
+.dish-availability {
+    font-size: 0.75rem;
+    margin-top: 0.25rem;
+}
+
+.availability-available {
+    color: #059669;
+}
+
+.availability-unavailable {
+    color: #64748b;
+}
+
+.dish-image {
+    width: 100%;
+    height: 10rem;
+    object-fit: cover;
+    border-radius: 0.75rem;
+    border: 1px solid #d1d5db;
+    max-width: 100%;
+}
+
+.dish-actions-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 0.5rem;
+    border-top: 1px solid #e5e7eb;
+}
+
+.dish-meal-type {
+    font-size: 0.75rem;
+    color: #64748b;
+}
+
+.dish-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dish-action-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    border-radius: 0.75rem;
+    border: 1px solid #d1d5db;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.875rem;
+    cursor: pointer;
+    background: white;
+}
+
+.btn-order {
+    color: #059669;
+}
+
+.btn-delete {
+    color: #dc2626;
+}
